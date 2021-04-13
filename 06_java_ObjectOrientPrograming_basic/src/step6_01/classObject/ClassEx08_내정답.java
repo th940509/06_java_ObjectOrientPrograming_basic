@@ -1,5 +1,5 @@
 package step6_01.classObject;
-//20201/04/12 18:51 ~ 
+//20201/04/13 12:30 ~ 13:48
 /*
  * # 숫자이동[3단계] : 클래스 + 변수
  * 1. 숫자2는 캐릭터이다.
@@ -51,8 +51,9 @@ public class ClassEx08_내정답 {
 				if(player != 0 && e.game[player-1] ==1) {
 					System.out.print("3. punch: ");
 					int punch = scan.nextInt();
-					if(punch != 3) {}
-					continue;
+					if(punch != 3) {
+						continue;
+					}
 				}
 				
 				e.game[player] = 0;
@@ -61,6 +62,27 @@ public class ClassEx08_내정답 {
 				if(player == -1) {
 					player = e.game.length -1;
 				}
+				
+				e.game[player] = 2;
+			}
+			
+			else if (move == 2) {
+				
+				if(player != e.game.length-1 && e.game[player +1] ==1) {
+					System.out.print("3. punch: ");
+					int punch = scan. nextInt();
+					if(punch!=3) {
+						continue;
+					}
+ 				}
+				
+				e.game[player] = 0;
+				player ++;
+				if(player == e.game.length) {
+					player = 0;
+				}
+				e.game[player] = 2;
+				
 			}
 			
 			
