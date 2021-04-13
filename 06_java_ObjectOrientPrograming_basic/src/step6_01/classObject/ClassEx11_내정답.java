@@ -77,21 +77,128 @@ public class ClassEx11_내정답 {
 			int sel = scan.nextInt();
 			
 			if		(sel == 1) {
+				System.out.print("[가입] 계좌번호 입력: ");
+				String acc = scan.next();
+				int check = 1;
+				for(int i=0; i<e.arAcc.length; i++) {
+					if(e.arAcc[i].equals(acc)) {
+						check = -1;
+					}
+				}
+				if(check == -1) {
+					System.out.println("[메세지] 중복되는 계좌번호입니다.");
+				}
+				else {
+					System.out.print("[가입] 비밀번호 입력: ");
+					String pw = scan.next();
+					
+					e.arAcc[e.accCnt] = acc;
+					e.arPw[e.accCnt] = pw;
+					e.arMoney[e.accCnt] = 1000;
+					e.accCnt ++;
+					System.out.println("[메세지] 가입을 축하합니다!");
+				}
+			}
 			
-			}
 			else if (sel == 2) {
+				if(e.identifier == -1) {
+					System.out.println("[메세지] 로그인 후 이용가능합니다.");
+					continue;
+				}
 				
+				for(int i=e.identifier; i<e.accCnt-1; i++) {
+					e.arAcc[i] = e.arAcc[i+1];
+					e.arPw[i] = e.arPw[i+1];
+					e.arMoney[i] = e.arMoney[i+1];
+				}
+				e.accCnt -=1;
+				e.identifier = -1;
+				System.out.println("[메시지] 탈퇴가 완료 되었습니다.");
 			}
+			
 			else if (sel == 3) {
+				
+				if(e.identifier != -1) {
+					System.out.println("[메세지] 현재" + e.arAcc[e.identifier] + "님 로그인중...");
+					continue;
+				}
+				System.out.print("[로그인] 계좌번호 입력: ");
+				String acc = scan.next();
+				
+				System.out.println("[로그인] 비밀번호 입력: ");
+				String pw = scan.next();
+				
+				for(int i=0; i<e.accCnt; i++) {
+					if(e.arAcc[i].equals(acc) && e.arPw[i].equals(pw)) {
+						e.identifier = i;
+					}
+				}
+				if(e.identifier == -1) {
+					System.out.println("[메세지] 계좌번호와 비밀번호를 확인해주세요.");
+				}
+				else {
+					System.out.println("[메세지]" + e.arAcc[e.identifier] + "님 환영합니다.");
+				}
 				
 			}
 			else if (sel == 4) {
+				if(e.identifier == -1) {
+					System.out.println("[메세지] 로그인 후 이용 가능합니다.");
+					continue;
+				}
+				e.identifier = -1;
+				System.out.println("[메세지]  로그아웃 되었습니다!");
 			}
 			else if (sel == 5) {
-			
+				if(e.identifier == -1) {
+					System.out.println("[메세지] 로그인 후 이용 가능합니다.");
+					continue;
+				}
+				System.out.print("[입급] 금액 입력: ");
+				int money = scan.nextInt();
+				
+				e.arMoney[e.identifier] += money;
+				System.out.println("[메세지] 입금을 완료하였습니다.");
 			}
-			else if (sel == 6) {}
-			else if (sel == 7) {}
+			else if (sel == 6) {
+				if (e.identifier == -1) {
+					System.out.println("[메세지]로그인 후 이용가능합니다.");
+					continue;					
+				}
+				System.out.print("[이체] 계좌번호 입력:");
+				String acc = scan.next();
+				
+				int check = -1;
+				for(int i=0; i<e.accCnt; i++) {
+					if(e.arAcc[i].equals(acc)) {
+						check = i;
+					}
+				}
+				if(check == -1) {
+					System.out.println("[메세지] 계좌번호를 확인해주세요.");
+				}
+				else {
+					System.out.print ("[이체] 금액 입력: ");
+					int money = scan.nextInt();
+					
+					if(e.arMoney[e.identifier] >= money) {
+						e.arMoney[e.identifier] -= money;
+						e.arMoney[check] += money;
+						System.out.println("[메세지] 이체를 완료 하였습니다.");
+					}
+					else {
+						System.out.println("[메세지] 계좌 잔액이 부족합니다.");
+					}
+				}
+				
+			}
+			else if (sel == 7) {
+				if (e.identifier == -1) {
+					System.out.println("[메세지]로그인 후 이용가능합니다.");
+					continue;					
+				}
+				System.out.println(e.arAcc[e.identifier] + "님의 계좌 잔액은" + e.arMoney[e.identifier]+"원 입니다.");
+			}
 			else if (sel == 0) {
 				System.out.println("프로그램 종료");
 				break;
