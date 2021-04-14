@@ -1,5 +1,5 @@
 package step6_01.classObject;
-//2021/04/13 16:22
+//2021/04/13 16:22 ~ 19:00
 /*
  * # ATM[4단계] : 전체 기능구현
  * 1. 회원가입
@@ -205,7 +205,7 @@ public class ClassEx11_내정답 {
 			}
 			
 		}		
-		
+		scan.close();
 	}
 
 }
