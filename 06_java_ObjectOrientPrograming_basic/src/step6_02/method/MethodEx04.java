@@ -8,9 +8,9 @@ class Zealot {
 	int shield = 60;
 	int hp = 100;
 	
-	void aaa(int hp){
-		this.hp =1;
-	}
+//	void aaa(int hp){
+//		this.hp =1;
+//	}
 	
 	void showStatus() {
 		System.out.println("this: " + this);

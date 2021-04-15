@@ -68,6 +68,7 @@ public class MethodEx02 {
 		double res2 = mt.type01();
 		double res3 = mt.type01();
 		double res4 = mt.type01();
+		System.out.println(res2);
 		System.out.println("=================\n");
 		
 		//입력값과 결과값이 모두 없는 경우
