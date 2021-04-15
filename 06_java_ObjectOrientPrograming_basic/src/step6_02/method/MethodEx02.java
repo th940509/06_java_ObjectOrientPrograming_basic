@@ -21,12 +21,22 @@ class MethodType {
 		return arg1 + arg2;
 	}
 	
+	// 입력값은 있고 결과값은 없는 경우
 	void type10(int arg1, int arg2) {
 		System.out.println("type 10메서드 호출");
 		System.out.println("두 인자의 합: " + (arg1 + arg2));
 	}
 	
-	void saveData(String name) {
+	
+	// 입력값은 없고 결과값은 있는 경우
+	double type01() {
+		System.out.println("type01메서드 호출");
+		return 3.141592;
+	}
+	
+	// 입력값과 결과값이 모두 없는 경우
+	void type00() {
+		System.out.println("type00 메서드 호출");
 	}
 	
 }
@@ -52,6 +62,18 @@ public class MethodEx02 {
 		mt.type10(12,34);
 		mt.type10(123,345);
 		mt.type10(1234,3456);
+		System.out.println("=================\n");
+		
+		//입력값은 없고 결과값이 있는 경우
+		double res2 = mt.type01();
+		double res3 = mt.type01();
+		double res4 = mt.type01();
+		System.out.println("=================\n");
+		
+		//입력값과 결과값이 모두 없는 경우
+		mt.type00();
+		mt.type00();
+		mt.type00();
 		
 	}
 
