@@ -30,7 +30,7 @@ class Character {
 public class ClassEx01 {
 
 	public static void main(String[] args) {
-
+		
 		Character c1 = new Character();
 		c1.level = 100;
 		System.out.println(c1);
@@ -59,6 +59,7 @@ public class ClassEx01 {
 		System.out.println(c3.life);
 		System.out.println(c3.mana);
 		System.out.println();
+		
 	}
 
 }
