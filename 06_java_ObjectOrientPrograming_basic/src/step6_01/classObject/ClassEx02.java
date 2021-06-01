@@ -29,6 +29,7 @@ public class ClassEx02 {
 		Character c3 = new Character();
 		
 		ClassEx01 obj = new ClassEx01();
+		
 	}
 
 }
