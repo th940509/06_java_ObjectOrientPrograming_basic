@@ -56,7 +56,6 @@ public class ClassEx03_내정답 {
 		}
 		System.out.println("짝수의 개수 = " + count);
 
-
 	}
 
 }

@@ -1,5 +1,6 @@
 package step6_02.method;
 //2021/04/14 16:20 ~ 16:38
+
 import java.util.Scanner;
 
 class Ex05_1{
