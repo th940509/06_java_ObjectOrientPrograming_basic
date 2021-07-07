@@ -1,4 +1,3 @@
-
 package step6_02.method;
 //2021/04/15 15:45 ~ 16:27
 import java.util.Arrays;
@@ -49,8 +48,6 @@ public class MethodEx10_내정답 {
 			// 문제 2) 4의 배수의 개수만큼의 새로운 배열을 만들고, 4의 배수를 저장후 배열을 리턴해주는 메서드
 			int[] temp = e.test2(arr);
 			System.out.println(Arrays.toString(temp));
-		
-
 
 	}
 

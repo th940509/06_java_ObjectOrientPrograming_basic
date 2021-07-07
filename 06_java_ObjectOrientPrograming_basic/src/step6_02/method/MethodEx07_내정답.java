@@ -51,9 +51,6 @@ public class MethodEx07_내정답 {
 			// 문제3) 2부터 primeNumber까지의 소수를 전부 출력하는 메서드 
 			int primeNumber = 20;
 			e.printPrimeNums(primeNumber);
-		
-
-
 
 	}
 

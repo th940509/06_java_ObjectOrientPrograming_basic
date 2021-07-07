@@ -53,7 +53,6 @@ public class MethodEx06_내정답 {
 			int idx1 = 1;
 			int idx2 = 4;
 			e.test3(arr, idx1, idx2);
-		
 
 	}
 
